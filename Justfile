@@ -12,6 +12,7 @@ help:
   @echo "  just sanity         # Quick engine sanity check"
   @echo "  just test           # Run smoke/integration tests"
   @echo "  just logs           # Show latest session log path"
+  @echo "  just continue       # Run headless status loop (Codex CLI)"
   @echo "  just stop           # Stop running processes (placeholder)"
 
 # Cross-platform setup (Windows uses PowerShell if available; else no-op)
@@ -65,3 +66,10 @@ stop:
   @echo "If engines are running, stop them via your OS tools (Task Manager / kill)."
   @echo "Future: orchestrator will manage PID files for stop."
 
+# Headless status loop using Codex CLI
+continue:
+  if ! command -v codex >/dev/null 2>&1; then \
+    echo "codex CLI not found in PATH. Install Codex CLI first."; \
+    exit 127; \
+  fi
+  ./scripts/headless-loop.sh
