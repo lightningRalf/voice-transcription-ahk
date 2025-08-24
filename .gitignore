@@ -1,0 +1,40 @@
+# OS/Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Builds/Artifacts
+dist/
+build/
+out/
+
+# Logs & Temp
+logs/
+*.log
+*.tmp
+*.bak
+.last.txt
+
+# Large artifacts
+models/
+
+# Engines (downloaded binaries)
+engines/**/bin/
+engines/**/*.exe
+engines/**/*.dll
+
+# Tests output & coverage
+tests/output/
+coverage/
+*.coverage
+
+# Env/Secrets
+.env
+*.env
+
+# Archives
+*.zip
+*.7z
+*.tar
+*.gz
